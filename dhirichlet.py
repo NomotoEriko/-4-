@@ -16,16 +16,16 @@ def draw(alpha1, alpha2, alpha3, name):
             y.append(yi)
             z.append(dhir([xi, yi, zi], [alpha1, alpha2, alpha3]))
     clf()
-    npx = np.arange(101)
-    npy = np.arange(101)
+    npx = np.arange(101)*0.01
+    npy = np.arange(101)*0.01
     npX, npY = meshgrid(npx, npy)
     npz = np.zeros((101, 101))-1
     for i in range(len(x)):
         npz[round(x[i]*100), round(y[i]*100)] = z[i]
     pcolor(npX, npY, npz, cmap='Blues', vmin=-1, vmax=20)
     colorbar()
-    xlim(0, 101)
-    ylim(0, 101)
+    xlim(0, 1)
+    ylim(0, 1)
     savefig(name)
 
 if __name__ == '__main__':
