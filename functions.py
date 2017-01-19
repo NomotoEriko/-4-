@@ -14,7 +14,7 @@ def beta_distribution(theta, a, b):
     # ベータ分布
     return math.pow(theta, a-1)*math.pow(1-theta, b-1)/beta_function(a, b)
 
-def dir(thetas, alphas):
+def dhirichlet(thetas, alphas):
     # ディリクレ分布
     alp = 0
     for al in alphas:
@@ -45,4 +45,4 @@ if __name__ == '__main__':
     als = [int(t) for t in input('alphas >').rstrip().split()]
     while len(thetas) > len(als):
         als += [int(t) for t in (input('more alphas >').rstrip().split())]
-    print(dir(thetas, als))
+    print(dhirichlet(thetas, als))

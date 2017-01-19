@@ -1,4 +1,4 @@
-from functions import dir
+from functions import dhirichlet as dhir
 from mpl_toolkits.mplot3d import Axes3D
 from pylab import *
 import numpy as np
@@ -14,7 +14,7 @@ def draw(alpha1, alpha2, alpha3, name):
             zi = 1-xi-yi
             x.append(xi)
             y.append(yi)
-            z.append(dir([xi, yi, zi], [alpha1, alpha2, alpha3]))
+            z.append(dhir([xi, yi, zi], [alpha1, alpha2, alpha3]))
     clf()
     npx = np.arange(101)
     npy = np.arange(101)
@@ -39,7 +39,7 @@ if __name__ == '__main__':
             zi = 1-xi-yi
             x.append(xi)
             y.append(yi)
-            z.append(dir([xi, yi, zi], [4, 4, 4]))
+            z.append(dhir([xi, yi, zi], [4, 4, 4]))
     # Dir(4,4,4)をθ1, θ2を説明変数(Θ3=1-Θ1-Θ2)として3次元に可視化
     ax = Axes3D(plt.figure())
     ax.plot_wireframe(x, y, z)
