@@ -27,7 +27,7 @@ def dhirichlet(thetas, alphas):
     return z
 
 if __name__ == '__main__':
-    # ヂリクレ分布の関数がちゃんと動くか試し書き(あまり意味がない)
+    # ディリクレ分布の関数がちゃんと動くか試し書き(あまり意味がない)
     ts = [float(t) for t in input('thetas >').rstrip().split()]
     l = 1.0
     thetas = []
